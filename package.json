@@ -1,0 +1,43 @@
+{
+  "name": "saas-crm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview --host 127.0.0.1 --port 3001",
+    "test": "node --test --test-concurrency=1 tests",
+    "lint": "eslint src tests e2e playwright.config.js",
+    "format": "prettier --write src tests e2e docs *.json *.js *.md *.html",
+    "format:check": "prettier --check src tests e2e docs *.json *.js *.md *.html",
+    "test:unit": "node --test --test-concurrency=1 tests/records.test.js tests/validation-matrix.test.js",
+    "test:integration": "node --test --test-concurrency=1 tests/api.test.js tests/auth.test.js tests/react-pages.test.js",
+    "test:coverage": "node --test --experimental-test-coverage --test-concurrency=1 tests",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
+    "formik": "^2.4.9",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-redux": "^9.3.0",
+    "react-router-dom": "^7.18.4",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "vite": "^6.1.0"
+  }
+}
